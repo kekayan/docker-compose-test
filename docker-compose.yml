@@ -14,10 +14,10 @@ services:
       - "$PWD/browsers:/etc/selenoid/:ro"
       - "/var/run/docker.sock:/var/run/docker.sock"
     command: ["-container-network", "gwen-net"]
-  # chrome:
-  #   image: selenoid/chrome:latest
-  #   networks:
-  #     - gwen-net
+  chrome:
+    image: selenoid/chrome:latest
+    networks:
+      - gwen-net
 networks:
   gwen-net:
     name: gwen-net
