@@ -1,9 +1,9 @@
 version: '3.5'
 services:
-  hello:
-    image: nginx
-    networks:
-      - gwen-net
+  # hello:
+  #   image: nginx
+  #   networks:
+  #     - gwen-net
   chrome:
     image: selenoid/chrome:latest
     networks:
