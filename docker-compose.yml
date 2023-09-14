@@ -11,7 +11,7 @@ services:
     ports:
       - "4444:4444"
     volumes:
-      - "browsers:/etc/selenoid/:ro"
+      - "$PWD/browsers:/etc/selenoid/:ro"
       - "/var/run/docker.sock:/var/run/docker.sock"
     command: ["-container-network", "gwen-net"]
   # chrome:
