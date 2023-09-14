@@ -1,13 +1,19 @@
 version: '3.5'
 services:
-  hello:
-    image: nginx
+  # hello:
+  #   image: nginx
+  #   networks:
+  #     - gwen-net
+  selenoid:
+    image: aerokube/selenoid:latest-release
     networks:
       - gwen-net
-  hello2:
-    image: nginx
-    networks:
-      - gwen-net
+    ports:
+      - "4444:4444"
+    volumes:
+      - "browsers:/etc/selenoid/:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: ["-container-network", "gwen-net"]
   # chrome:
   #   image: selenoid/chrome:latest
   #   networks:
