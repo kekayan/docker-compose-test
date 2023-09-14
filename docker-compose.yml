@@ -4,10 +4,14 @@ services:
     image: nginx
     networks:
       - gwen-net
-  chrome:
-    image: selenoid/chrome:latest
+  hello2:
+    image: nginx
     networks:
       - gwen-net
+  # chrome:
+  #   image: selenoid/chrome:latest
+  #   networks:
+  #     - gwen-net
 networks:
   gwen-net:
     name: gwen-net
